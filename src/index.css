@@ -1,0 +1,909 @@
+/* متغيرات ألوان الوضع الداكن */
+:root {
+  font-family: "Zain", sans-serif;
+
+  /* ألوان النص والخلفيات */
+  --text-color: #181717; /* نص أبيض */
+  --navbar-color: #00a5a5; /* اللون الأساسي (أزرق مائل إلى الأخضر) */
+
+  /* ألوان الأزرار والخلفيات */
+  --liner-btn: linear-gradient(90deg, #efffff 20%, #00a5a5 100%); /* تدرج لوني للأزرار */
+  --liner-btn-hover: linear-gradient(90deg, #00a5a5 100%, #00a5a5 100%); /* تدرج لوني عند التمرير فوق الأزرار */
+  --box-Shadow: rgba(149, 157, 165, 0.251) 8px 10px 15px;
+  /* ألوان بديلة */
+  --alternative-color: #f4c542; /* برتقالي زاهي */
+  --alternative-color-light: #f4c542; /* أصفر زاهي */
+  --background-color: #f0f0f0; /* رمادي فاتح للخلفية */
+  --text-light: #333333; /* نص رمادي داكن */
+}
+
+/* ألوان الوضع الداكن */
+.dark-mode {
+  --text-color: #ffffff; /* نص أبيض */
+  --navbar-color: #00a5a5; /* لون الشريط العلوي داكن */
+  --liner-btn: linear-gradient(90deg, #ffffff 20%, #158686 100%); /* تدرج لوني للأزرار */
+  --liner-btn-hover: linear-gradient(90deg, #00a5a5 100%, #00a5a5 100%); /* تدرج لوني عند التمرير فوق الأزرار */
+  --alternative-color: #ecba2f; /* برتقالي زاهي */
+  --alternative-color-light: #e4e42f; /* أصفر زاهي */
+  --background-color: #1b2931; /* خلفية داكنة */
+  --text-light: #cccccc; /* نص رمادي فاتح */
+  --box-Shadow: rgba(19, 23, 27, 0.251) 20px 25px 25px;
+}
+
+body {
+  background-color: var(--background-color) !important;
+  overflow-x: hidden;
+  direction: rtl;
+}
+html {
+  overflow-x: hidden;
+}
+body.dark-mode {
+  background-color: var(--background-color) !important;
+}
+
+ul li {
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+}
+.Navbarme {
+  background: var(--background-color);
+  box-shadow: var(--box-Shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.links li a {
+  padding: 0.4rem 1rem;
+  border-radius: 7px;
+  position: relative;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+.links {
+  transform: translate(10px, 8px);
+}
+.links li a::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: var(--text-color);
+  top: 100%;
+  right: 20px;
+  transition: 0.3s linear;
+}
+
+.links li a:hover::after {
+  width: 50%;
+}
+
+.login a {
+  color: var(--navbar-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 2px solid var(--navbar-color);
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  transition: 0.4s ease-in-out;
+}
+
+
+.logo {
+  cursor: pointer;
+}
+
+.LogoImg {
+  width: 50px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.LogoImg:hover {
+  filter: drop-shadow(1px 1px 20px rgb(9, 187, 241));
+}
+
+.Dr {
+  color: var(--navbar-color);
+}
+.Genius{
+  color: var(--alternative-color-light);
+}
+
+
+/* toggoler  start*/
+.toggoler {
+  display: none;
+}
+.toggoler .btn {
+  background: transparent;
+  color: var(--navbar-color);
+  font-size: 1.3rem;
+  border: none;
+}
+.toggoler .btn:hover {
+  background: var(--navbar-color);
+  color: var(--text-color);
+}
+.btn-group-vertical,
+.btn-group {
+  display: block !important;
+  text-align: center;
+}
+.btn-group ul li {
+  padding: 1rem;
+  box-shadow: rgba(145, 159, 173, 0.404) 0px 20px 30px -10px;
+  margin: 1rem 0;
+  cursor: pointer;
+  color: var(--text-black);
+  transition: 0.4s ease-in-out;
+}
+.btn-group ul li:hover {
+  box-shadow: rgba(145, 159, 273, 0.774) 0px 20px 30px -10px;
+}
+.btn-group ul li a {
+  color: var(--text-black);
+}
+/* toggoler   End*/
+
+
+/* Power Section start  and skills section*/
+.paragraph h1,
+.paragraph h2,
+.paragraph p {
+  color: var(--text-color);
+}
+.paragraphSkills {
+  color: #fff;
+}
+.Mypower,
+.MySkills {
+  margin-top: 6.5rem;
+  padding:0 3rem;
+}
+.FotoPower, .FotoSkills, .Imagesteps {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.colPowertext,
+.colSkills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.btnPower,
+.btnSkills{
+  background: linear-gradient(90deg, #00a5a5 20%, #3cc5e7 100%);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  transition: 0.4s ease-in-out;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+  color: #020405 !important;
+}
+.btnPower:hover {
+  background: linear-gradient(90deg, #00a5a5 100%, #3cc5e7 100%);
+}
+.btnSkills{
+  background:var(--alternative-color);
+  color: var(--text-color);
+  border: 2px solid transparent;
+}
+.btnSkills:hover {
+  background: var(--alternative-color-light);
+}
+.MySkills{
+  background: #020405;
+}
+.MySkills .colSkillstext{
+  background: url(./assets/classOneFooter.png)center center/ cover no-repeat;
+  background-color: #020405;
+}
+/* Power Section       End       and skills */
+
+/* work and Education start */
+.LearnWork{
+  margin: 5rem 13rem 0 13rem;
+  transition:0.4s ease-in-out;
+  box-shadow: var(--box-Shadow);
+  border-radius: 10px;
+}
+.LearnWork:hover {
+  box-shadow: var(--box-Shadow);
+}
+
+.LearnWork h3{
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+.LearnWork img{
+  width: 35px;
+  margin-bottom: 15px;
+}
+.here{
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-left: 11px;
+  border-left: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.4s linear;
+}
+
+.here:hover {
+  border-left: 1px solid var(--navbar-color);
+}
+
+.LearnWork{
+  color: var(--text-color);
+}
+/* work and Education End */
+
+/* Classes start */
+.cardsAllClasses .card{
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--box-Shadow);
+  transition: 0.4s ease-in-out;
+}
+.cardsAllClasses .card:hover{
+  box-shadow: rgba(3, 16, 29, 0.61) 0px 8px 24px;
+}
+.Classes,
+.StudentSection,
+.footme {
+  margin: 5rem 5rem 2rem 5rem;
+}
+.footme {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.Classes .title,
+.StudentSection .title,
+.footme .title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding-bottom: 1rem;
+}
+.Classes a{
+  text-decoration: none;
+}
+.Classes .title,
+.StudentSection .title{
+  color: var(--text-color);
+}
+.StudentSection .title:hover,
+.Classes .title:hover{
+  color: var(--navbar-color);
+}
+/* --------------------------------- Arrow Start------------------------ */
+.ArrowLeft,
+.ArrowTittle {
+  color: var(--navbar-color);
+  transition: 0.4s linear;
+}
+
+.here:hover .ArrowLeft,
+.Classes .title:hover .ArrowTittle,
+.conStudent .title:hover .ArrowTittle,
+.footme .title:hover .ArrowTittle{
+  transform: translate(-95px,0);
+}
+.conStudent .title .ArrowTittle,
+.footme .title .ArrowTittle{
+  color: var(--navbar-color);
+}
+/* ------------------------------- Arrow End--------------------------- */
+.cardsAllClasses .card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.ImgMR {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;  
+}
+.cardsAllClasses .card-img{
+  opacity: 
+  35%;
+}
+.cardsAllClasses .card-body {
+  background: var(--background-color);
+  border: none;
+  color: var(--text-light);
+}
+.OnlyClass {
+  color: transparent;
+  transform: translate(10px, 0);
+  transition: 0.4s linear;
+}
+.InfoClassOne {
+  transform: translate(10px, 0);
+  transition: 0.4s linear;
+}
+.cardsAllClasses .card:hover .OnlyClass{
+  color: var(--alternative-color);
+  transform: translate(-2px, 0);
+}
+.cardsAllClasses .card:hover .InfoClassOne {
+  color: var(--alternative-color);
+  transform: translate(-5px, 0);
+}
+/* Classes End */
+
+/* Good Student start */
+.slider {
+  margin: 1rem 20rem; /* ضبط الهوامش لتكون في المركز */
+  transition: 0.4s ease-in-out;
+  position: relative; /* مهم لوضع الشراشير فوق العنصر */
+  z-index: 1; /* لضمان ظهور الشراشير فوق هذا العنصر */
+  color: var(--text-color);
+}
+
+.slider .student-slide {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+}
+
+.student-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.student-slide {
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.slider {
+  box-shadow: var(--box-Shadow);
+}
+
+/* Confetti container */
+.confetti-container {
+  position: fixed; /* لضمان ظهور الشراشير فوق الصفحة */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* عدم التأثير على تفاعل المستخدم مع العناصر الأخرى */
+  z-index: 9999; /* تأكد من ظهور الشراشير فوق كل شيء */
+}
+/* Good Student End */
+
+/* Step By Step start */
+.sectionSteps {
+  margin: 5rem 0 1rem 0;
+  color: var(--text-color);
+}
+/* Step By Step End */
+
+/* Footer Top start */
+.SectionTopFooter {
+  background: var(--navbar-color);
+}
+.LearnScool {
+  margin: 5rem 5rem 0rem 5rem;
+}
+.btnTopFooter {
+  color: var(--text-light);
+  background: var(--background-color);
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: 0.4s ease-in-out;
+}
+.btnTopFooter:hover {
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  background: transparent;
+}
+.LinkClassOne,
+.LinkClassTwo,
+.LinkClassThree {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: 0.4s ease-in-out;
+}
+.LinkClassOne:hover,
+.LinkClassTwo:hover ,
+.LinkClassThree:hover  {
+  color: var(--alternative-color);
+}
+/* Footer Top End */
+
+/* Footer Start */
+.Footer {
+  background: #0d2438;
+  position: relative;
+}
+.iconMedia {
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.facebook,
+.twitter,
+.instagram,
+.youtube {
+    background: #3b5998;
+    padding: 3rem 4rem;
+    cursor: pointer;
+
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.facebook:hover,
+.twitter:hover,
+.instagram:hover,
+.youtube:hover{
+  transform: scale(1.1);
+}
+.twitter{
+  background: #55acee;
+}
+.instagram {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d);;
+}
+.youtube{
+  background: #b00;
+}
+.iconFace,
+.iconTwitter,
+.iconInsta,
+.iconYout{
+  font-size: 2.5rem;
+  color: #fff;
+}
+.created p{
+margin-bottom: 0 !important;
+}
+/* Footer End */
+
+
+
+
+
+/* Pages start */
+
+/* ClassOnePage start */
+.ClassOnePageSection,
+.ClassTwoPageSection,
+.ClassThreePageSection {
+  padding-top: 80px;
+}
+.ClassOnePageSection .row{
+  background: url("./assets/classOneFooter.png")center center/ cover no-repeat;
+  background-color: #020405;
+  color: var(--text-color);
+}
+.ClassTwoPageSection .row {
+  background: url("./assets//bg-ClassTwo.png") center center/ cover no-repeat;
+  background-color: var(--text-black);
+  color: var(--text-color);
+}
+
+.ClassOneImgEdit,
+.ClassTwoImgEdit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+.ClassTwoImgEdit {
+  opacity: 1;
+}
+
+.ClassOnePageSection .paragraph h3,
+.ClassTwoPageSection .paragraph  h3{
+  color: var(--navbar-color);
+}
+
+/* ClassOnePage End */
+/* class three videos */
+.ClassThreePageSection {
+  position: relative;
+  overflow: hidden;
+  height: 50vh; /* Adjust this value as needed */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensure the video is behind other content */
+}
+.ClassThreePageSection::after{
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.658);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.ClassThreePage {
+  position: relative;
+  z-index: 1; /* Ensure the text is above the video */
+  color: white; /* Adjust text color for better visibility */
+}
+.ClassThreePage .paragraph h3 {
+  color: var(--navbar-color);
+}
+.btnCloseVedio {
+  background: #00a5a5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* ClassOne Vedios start */
+.contVedio {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.TextLesson {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.IconLesson,
+.IconVedio {
+  color: var(--navbar-color);
+}
+.IconVedio {
+  border: 1px solid var(--navbar-color);
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 20px;
+}
+/*  ----- Vedio Button ----*/
+.accordion-button:hover{
+  background-color: #00a5a577;
+  color: var(--text-color);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+}
+.btnWatch,
+.btnCloseVedio {
+  padding: .5rem 2rem;
+  background: var(--navbar-color);
+  color: var(--text-color);
+  border-radius: 40px;
+  border: 1px solid transparent;
+  transition: 0.4s ease-in-out;
+}
+.accordion-body {
+  flex-wrap: wrap;
+}
+.btnWatch:hover,
+.btnCloseVedio:hover {
+  background: transparent;
+  color: var(--text-black);
+  border: 1px solid var(--navbar-color);
+}
+/* ClassOne Vedios End */
+
+/* Pages End */
+
+/* Modal Vedio Watch start */
+.ReactModal__Content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.61) !important;
+}
+
+/* Modal Vedio Watch end */
+
+/* Quiz START */
+.Quiz {
+  background: var(--navbar-color);
+  color: var(--text-color);
+  border: 1px solid transparent;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  transition: 0.4s ease-in-out;
+  text-decoration: none;
+}
+.Quiz:hover {
+  border: 1px solid var(--navbar-color);
+  background: transparent;
+  color: var(--text-black);
+}
+/* Quiz End */
+/* QuizPage.css */
+.StartTest {
+  border: none;
+  background: green;
+  padding: 0.5rem 5rem;
+  border-radius: 20px;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  transition: 0.4s ease-in-out;
+}
+.StartTest:hover {
+  background: rgb(6, 168, 6);
+}
+.animation-video{
+  width: 100%;
+  height: 400px;
+  margin-bottom: 1rem;
+}
+.contenStartTest{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contenStartTest h1 {
+  color: var(--text-color);
+}
+.contentQuiz {
+  width: 100%;
+}
+.quiz-container {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.Timer, .CountQuistion {
+  background: var(--navbar-color);
+  padding: 1.5rem 2rem;
+  color:  var(--text-light);
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 20px;
+}
+.question-section h2 {
+  color: var(--text-color);
+}
+
+.Quistion,
+#Options {
+  padding: 1.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#Options {
+  width: 100%;
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+#Options:hover,
+.Next:hover,
+.Previous,
+.selected {
+  background: green;
+  color: var(--text-color);
+}
+.Next:hover,
+.Previous:hover{
+  background: rgb(10, 63, 209);
+}
+.Next,
+.Previous {
+  padding: 0.5rem 5rem;
+  font-size: 1.4rem;
+}
+.question-section {
+  margin-bottom: 20px;
+}
+
+.options button {
+  display: block;
+  margin: 5px 0;
+}
+
+/* ResultPage.css */
+.result-container {
+  text-align: center;
+  padding: 5rem 0rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15rem;
+  box-shadow: var(--box-Shadow);
+  width: 50%;
+  color: var(--text-color);
+}
+
+/* Media start*/
+.steps h3 {
+  font-size: 1.1rem;
+}
+.steps p {
+  padding-bottom: 1rem !important;
+}
+.secondParagraph {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 1200px) {
+  .LearnWork {
+    margin: 2rem 2rem 0 2rem;
+    text-align: center;
+  }
+  .LearnWork:hover .ArrowLeft {
+    transform: translate(-50px, 0);
+  }
+  .LinkClassOne,
+  .LinkClassTwo,
+  .LinkClassThree {
+    font-size: 1rem !important;
+    text-wrap: nowrap !important;
+  }
+  .Classes, .StudentSection, .footme {
+    margin: 5rem 1rem 2rem 1rem;
+  } 
+  .footme{
+    margin: 0;
+  }
+}
+@media (max-width: 1020px) {
+  .btnPower, .btnSkills{
+    width: 60%;
+  }
+  .Mypower, .MySkills {
+    margin-top: 8rem;
+    padding: 0 2rem;
+  }
+  .slider {
+    margin: 1rem 10rem;
+  }
+  .cardsAllClasses  {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 965px) {
+  .links li a {
+    padding: 0.2rem 0.2rem;
+    font-size: 1rem;
+  }
+  .paragraph h1 {
+    font-size: 1.5rem;
+  }
+  .paragraph p{
+    font-size: 1rem !important;
+  }
+  .here p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 825px) {
+  .links,
+  .login{
+    display: none;
+  }
+  .toggoler {
+    display: block;
+  }
+  .slider {
+    margin: .2rem 1rem;
+  }
+}
+@media (max-width: 625px) {
+  .LearnWork {
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+  .MySkills{
+    margin-top: 3rem;
+  }
+  .row {
+    padding-left: 0 !important;
+  }
+  .Imagesteps{
+    padding-bottom: 1rem;
+    margin: 0;
+  }
+  .LearnScool {
+    margin: 5rem 1rem 0rem 1rem;
+  }
+  .created p{
+    padding: 0 2rem;
+  }
+  .footme .title p {
+    font-size: 1.1rem;
+  }
+  .Mypower, .MySkills {
+    margin-top: 5rem;
+  }
+  .Navbarme .logo  h2 {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 400px) {
+  .slider {
+    margin: .2rem .1rem;
+  }
+  .vediosClassOne {
+    padding: 1 !important;
+  } 
+}
+/* Media End*/
+
+
+
+/* fff */
+/* CSS للـ Dropdown في الـ Navbar */
+.dropdown {
+  position: relative;
+  transition: 0.4s ease-in-out !important;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: -15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  z-index: 1000;
+  transition: 0.4s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  transition: 0.4s ease-in-out !important;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu ul li {
+  margin: 0;
+}
+
+.dropdown-menu ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+}
+
+.dropdown-menu ul li a:hover {
+  background-color: #f0f0f0;
+}
+.MuiButtonBase-root {
+    padding: 1rem;
+    box-shadow: rgba(145, 159, 173, 0.404) 0px 20px 30px -10px;
+    margin: 1rem 0;
+    cursor: pointer;
+    color: var(--text-black);
+    transition: 0.4s ease-in-out;
+}
