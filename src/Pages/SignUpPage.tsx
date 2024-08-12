@@ -18,7 +18,7 @@ function Copyright(props: any) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
+            <Link color="inherit" href="https://www.facebook.com/alsay.ahmad">
                 Ahmed Elsay
             </Link>{' '}
             {new Date().getFullYear()}
@@ -38,18 +38,23 @@ export default function SignInSide() {
         const username = data.get('number') as string;
         const password = data.get('password') as string;
 
-        console.log('Username:', username); // For debugging
-        console.log('Password:', password); // For debugging
+        console.log('Entered Username:', username); // For debugging
+        console.log('Entered Password:', password); // For debugging
 
         try {
             // Fetch user data from JSON file
-            const response = await fetch('/public/data/NumberOne.json');
+            const response = await fetch('/data/NumberOne.json');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const users = await response.json();
-            const user = users.find((user: any) => user.username === username && user.password === password);
+            console.log('Fetched Users:', users); // For debugging
 
+            // Find user in the fetched data
+            const user = users.find((user: any) => user.username === username && user.password === password);
+            console.log('Matched User:', user); // For debugging
+
+            // Handle login success or failure
             if (user) {
                 setIsLoggedIn(true);
                 sessionStorage.setItem('isLoggedIn', 'true');
